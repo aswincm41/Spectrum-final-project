@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Logo Slider</title>
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <!-- Your custom CSS -->
+    <style>
+        /* Custom CSS styles */
+        .slick-slide img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div><img src="static/assets/images/logo/apple (1).png" alt="Brand 1"></div>
+        <div><img src="static/assets/images/logo/samsung.png" alt="Brand 2"></div>
+        <div><img src="static/assets/images/logo/mi.png" alt="Brand 2"></div>
+        <div><img src="static/assets/images/logo/vivo.png" alt="Brand 2"></div>
+        <!-- Add more brand logos here -->
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Your custom script -->
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                slidesToShow: 4, // Number of slides to show at a time
+                slidesToScroll: 1, // Number of slides to scroll at a time
+                autoplay: true, // Autoplay enabled
+                autoplaySpeed: 2000, // Autoplay speed in milliseconds
+                arrows: true, // Show arrows for navigation
+                dots: false, // Hide dots for navigation
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

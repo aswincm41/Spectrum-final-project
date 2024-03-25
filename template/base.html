@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zxx" dir="ltr">
+
+
+<!-- Mirrored from template.hasthemes.com/hmart/hmart/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Sep 2021 18:04:02 GMT -->
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadgethub (2024) | E-commerce platform</title>
+    <link rel="shortcut icon" type="image/png" href="static/assets/images/logo/icon.png" style="height: 15px;">
+    <!-- Optionally, you can specify a larger logo for higher resolution screens -->
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Hmart-Smart Product eCommerce html Template">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="static/assets/images/logo/icon.png" />
+    <!-- CSS
+    ============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'assets/css/font.awesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/pe-icon-7-stroke.css'%}" />
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/venobox.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.min.css'%}"> 
+    <!-- Style CSS -->
+    <!-- <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Minify Version -->
+    <link rel="stylesheet" href="{% static 'assets/css/plugins.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.min.css'%}">
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <header>
+            <!-- Header top area start -->
+            <div class="header-top" style="background-color: black;">
+                <div class="container" >
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col">
+                            <div class="welcome-text">
+                                <p>Gadget Hub | Gadgets for everyday usage</p>
+                            </div>
+                        </div>
+                        <div class="col d-none d-lg-block">
+                            <div class="top-nav"  >
+                                <ul>
+                                    <li><a href="tel:0123456789"style="display: inline-block; padding-left: 5px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                                      </svg> +917356925153</a></li>
+                                    <li><a href="mailto:demo@example.com" style="display: inline-block; padding-left: 5px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                                        <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
+                                        <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791"/>
+                                      </svg> GadgetHub@gmail.com </a></li>
+                                      {% if user.is_authenticated %}
+                                      <li><a href="{% url 'logout' %}">Logout</a></li>
+                                      {% else %}
+                                    <li>
+                                        <a href="{% url 'login' %}"style="display: inline-block; padding-left: 5px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                                      </svg>Login</a></li>
+                                      {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header top area end -->
+            <!-- Header action area start -->
+            <div class="header-bottom  d-none d-lg-block" style="background-color: black; height: 130px; padding-bottom: 30px;" >
+                <div class="container" >
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-3 col">
+                            <div class="header-logo">
+                                <a href="{% url 'index' %}"><img src="{% static 'assets/images/logo/Untitled-1.png' %}" alt="Site Logo" style="width: 300px; height: 150px; padding-bottom: 50px;"/></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-none d-lg-block">
+                            <div class="search-element" style="padding-bottom: 50px;" >
+                                <form action="/search/" method="get">
+                                    {% csrf_token %}
+                                    <input type="text" placeholder="Search"  name="query" id="query"/>
+                                    <button style=" background-color: rgb(246,25,42);"><i class="pe-7s-search"></i></button>
+                                </form>
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col" style="padding-bottom: 50px;">
+                            <div class="header-actions">
+                                <!-- Single Wedge Start -->
+                                <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
+                                    <i class="pe-7s-like"></i>
+                                </a>
+                                <!-- Single Wedge End -->
+                                <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                                    <i class="pe-7s-cart"></i>
+                                    <span class="header-action-num">{{request.session.cart | length}}</span>
+                                    <!-- <span class="cart-amount">€30.00</span> -->
+                                </a>
+                                <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                                      </svg>
+                                    
+                                    <!-- <span class="cart-amount">€30.00</span> -->
+                                </a>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header action area end -->
+            <!-- Header action area start -->
+            <div class="header-bottom d-lg-none sticky-nav style-1" >
+                <div class="container" >
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-3 col">
+                            <div class="header-logo">
+                                <a href="{% url 'index' %}"><img src="{% static 'assets/images/logo/LOGOO.png' %}" alt="Site Logo" /></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-none d-lg-block">
+                            <div class="search-element">
+                                <form action="#">
+                                    <input type="text" placeholder="Search" />
+                                    <button><i class="pe-7s-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col">
+                            <div class="header-actions">
+                                <!-- Single Wedge Start -->
+                                <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
+                                    <i class="pe-7s-like"></i>
+                                </a>
+                                <!-- Single Wedge End -->
+                                <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                                    <i class="pe-7s-shopbag"></i>
+                                    <span class="header-action-num">01</span>
+                                    <!-- <span class="cart-amount">€30.00</span> -->
+                                </a>
+                                <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
+                                    <i class="pe-7s-menu2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header action area end -->
+            <!-- header navigation area start -->
+            <div class="header-nav-area d-none d-lg-block sticky-nav" style="background: linear-gradient(45deg, rgba(246,25,42,0.8) 0%, rgba(218,42,28,0.8) 100%); ">
+                <div class="container">
+                    <div class="header-nav">
+                        <div class="main-menu position-relative" style="background: linear-gradient(45deg, rgba(246,25,42,0.8) 0%, rgba(218,42,28,0.8) 100%); ">
+                            <ul>
+                                <li class="dropdown"><a href="/">Home <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-add-fill" viewBox="0 0 16 16">
+                                    <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 1 1-1 0v-1h-1a.5.5 0 1 1 0-1h1v-1a.5.5 0 0 1 1 0"/>
+                                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                                    <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                                  </svg></a>
+                                    
+                                </li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                                <li class="dropdown position-static"><a href="#">Pages <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
+                                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
+                                  </svg></i></a>
+                                    
+                                <li class="dropdown position-static"><a href="#">Shop <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop-window" viewBox="0 0 16 16">
+                                    <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5m2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5"/>
+                                  </svg></a>
+                                    
+                                </li>
+                              
+                                <li><a href="{% url 'contact' %}">Contact <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+                                  </svg></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header navigation area end -->
+            <div class="mobile-search-box d-lg-none">
+                <div class="container">
+                    <!-- mobile search start -->
+                    <div class="search-element max-width-100">
+                        <form action="#">
+                            <input type="text" placeholder="Search" />
+                            <button><i class="pe-7s-search"></i></button>
+                        </form>
+                    </div>
+                    <!-- mobile search start -->
+                </div>
+            </div>
+        </header>
+        <!-- offcanvas overlay start -->
+        <div class="offcanvas-overlay"></div>
+        <!-- offcanvas overlay end -->
+        <!-- OffCanvas Wishlist Start -->
+        <div id="offcanvas-wishlist" class="offcanvas offcanvas-wishlist">
+            <div class="inner">
+                <div class="head">
+                    <span class="title">Wishlist</span>
+                    <button class="offcanvas-close">×</button>
+                </div>
+                <div class="body customScroll">
+                    <ul class="minicart-product-list">
+                        <li>
+                            <a href="single-product.html" class="image"><img src="{% static 'assets/images/product-image/1.web' %}" alt="Cart product Image"></a>
+                            <div class="content">
+                                <a href="single-product.html" class="title">Modern Smart Phone</a>
+                                <span class="quantity-price">1 x <span class="amount">$21.86</span></span>
+                                <a href="#" class="remove">×</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="single-product.html" class="image"><img src="{% static 'assets/images/product-image/2.webp' %}" alt="Cart product Image"></a>
+                            <div class="content">
+                                <a href="single-product.html" class="title">Bluetooth Headphone</a>
+                                <span class="quantity-price">1 x <span class="amount">$13.28</span></span>
+                                <a href="#" class="remove">×</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="single-product.html" class="image"><img src="{% static 'assets/images/product-image/3.webp' %}" alt="Cart product Image"></a>
+                            <div class="content">
+                                <a href="single-product.html" class="title">Smart Music Box</a>
+                                <span class="quantity-price">1 x <span class="amount">$17.34</span></span>
+                                <a href="#" class="remove">×</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="foot">
+                    <div class="buttons">
+                        <a href="wishlist.html" class="btn btn-dark btn-hover-primary mt-30px">view wishlist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- OffCanvas Wishlist End -->
+        <!-- OffCanvas Cart Start -->
+        {% load cart_tag %}
+        <div id="offcanvas-cart" class="offcanvas offcanvas-cart">
+            <div class="inner">
+                <div class="head">
+                    <span class="title">Cart</span>
+                    <button class="offcanvas-close">×</button>
+                </div>
+                <div class="body customScroll">
+                    <ul class="minicart-product-list">
+                        {% if request.session.cart|length < 1 %}
+                        <div class="empty-cart-area pb-100px pt-100px">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="cart-heading">
+                                            <h2>Your cart item</h2>
+                                        </div>
+                                        <div class="empty-text-contant text-center">
+                                            <i class="pe-7s-shopbag"></i>
+                                            <h3>No more items in your cart</h3>
+                                            <a class="empty-cart-btn" href="{% url 'product'%}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                                                    <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                                                  </svg> </i> Continue shopping
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Empty Cart area end -->
+                        {%else %}
+                                                {% for key,value in request.session.cart.items %}
+                                                <li>
+                                                    <a href="single-product.html" class="image"><img src="{{value.image}}" alt="Cart product Image"></a>
+                                                    <div class="content">
+                                                        <a href="single-product.html" class="title">{{value.name}}</a>
+                                                        <span class="quantity-price">{{value.quantity}} x <span class="amount">${{value.price}}</span></span>
+                                                        <a href="{%url 'item_clear' key %}" class="remove">×</a>
+                                                    </div>
+                                                </li>
+                                                {% endfor %}
+                        {% endif %}
+                                            </ul>
+                                        </div>
+                                        <div class="foot">
+                                            <div class="buttons mt-30px">
+                                                <a href="{% url 'cart_detail'%}" class="btn btn-dark btn-hover-primary mb-30px">view cart</a>
+                                                <a href="{%url 'checkout'%}" class="btn btn-outline-dark current-btn">checkout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- OffCanvas Cart End -->
+        <!-- OffCanvas Menu Start -->
+        <div id="offcanvas-mobile-menu" class="offcanvas offcanvas-mobile-menu">
+            <button class="offcanvas-close"></button>
+            <div class="user-panel">
+                <ul>
+                    <li><a href="tel:0123456789"><i class="fa fa-phone"></i> +917356925153</a></li>
+                    <li><a href="mailto:demo@example.com"><i class="fa fa-envelope-o"></i> gadgethub@example.com</a></li>
+                    <li><a href="my-account.html"><i class="fa fa-user"></i> Account</a></li>
+                </ul>
+            </div>
+            <div class="inner customScroll">
+                <div class="offcanvas-menu mb-4">
+                    <ul>
+                        <li>
+                            <a href="/index/"><span class="menu-text">Home</span></a>
+                            
+                        </li>
+                    </ul>
+                    
+                        </li>
+                        <li><a href="about.html">About</a></li>
+                        <li>
+                            <a href="#"><span class="menu-text">Pages</span></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#"><span class="menu-text">Inner Pages</span></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="404.html">404 Page</a></li>
+                                        <li><a href="order-tracking.html">Order Tracking</a></li>
+                                        <li><a href="faq.html">Faq Page</a></li>
+                                        <li><a href="coming-soon.html">Coming Soon Page</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="menu-text"> Other Shop Pages</span></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="cart.html">Cart Page</a></li>
+                                        <li><a href="checkout.html">Checkout Page</a></li>
+                                        <li><a href="compare.html">Compare Page</a></li>
+                                        <li><a href="wishlist.html">Wishlist Page</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="menu-text">Related Shop Page</span></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="my-account.html">Account Page</a></li>
+                                        <li><a href="login.html">Login & Register Page</a></li>
+                                        <li><a href="empty-cart.html">Empty Cart Page</a></li>
+                                        <li><a href="thank-you-page.html">Thank You Page</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><span class="menu-text">Shop</span></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#"><span class="menu-text">Shop Page</span></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="shop-3-column.html">Shop 3 Column</a></li>
+                                        <li><a href="shop-4-column.html">Shop 4 Column</a></li>
+                                        <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
+                                        <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
+                                        <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a>
+                                        </li>
+                                        <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a>
+                                        </li>
+                                        <li><a href="cart.html">Cart Page</a></li>
+                                        <li><a href="checkout.html">Checkout Page</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="menu-text">product Details Page</span></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="single-product.html">Product Single</a></li>
+                                        <li><a href="single-product-variable.html">Product Variable</a></li>
+                                        <li><a href="single-product-affiliate.html">Product Affiliate</a></li>
+                                        <li><a href="single-product-group.html">Product Group</a></li>
+                                        <li><a href="single-product-tabstyle-2.html">Product Tab 2</a></li>
+                                        <li><a href="single-product-tabstyle-3.html">Product Tab 3</a></li>
+                                        <li><a href="single-product-slider.html">Product Slider</a></li>
+                                        <li><a href="single-product-gallery-left.html">Product Gallery Left</a>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="menu-text">Single Product Page</span></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="single-product-gallery-right.html">Product Gallery
+                                                Right</a> </li>
+                                        <li><a href="single-product-sticky-left.html">Product Sticky Left</a>
+                                        </li>
+                                        <li><a href="single-product-sticky-right.html">Product Sticky Right</a>
+                                        </li>
+                                        <li><a href="compare.html">Compare Page</a></li>
+                                        <li><a href="wishlist.html">Wishlist Page</a></li>
+                                        <li><a href="my-account.html">Account Page</a></li>
+                                        <li><a href="login.html">Login & Register Page</a></li>
+                                        <li><a href="empty-cart.html">Empty Cart Page</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- OffCanvas Menu End -->
+                <div class="offcanvas-social mt-auto">
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-google"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-youtube"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- OffCanvas Menu End -->
+
+{% block body %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Footer Area Start -->
+ <div class="footer-area" style="background-color: black;">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <!-- Start single blog -->
+                    <div class="col-md-6 col-lg-3 mb-md-30px mb-lm-30px">
+                        <div class="single-wedge">
+                            <h4 class="footer-herading" style="color: white;">About us</h4>
+                            <!-- <div class="footer-logo">
+                                <a href="index.html"><img src="{% static 'assets/images/logo/Untitled-1.png' %}" alt="" style="width: 320px; height: 150px; padding-bottom: 50px;"></a>
+                            </div> -->
+                            <p class="about-text" style="color: white;">Discover the latest gadgets that inspire and empower you at GadgetHub. With our unrivaled selection, quality assurance, and exceptional customer service.
+                            </p>
+                            
+                        </div>
+                    </div>
+                    <!-- End single blog -->
+                    <!-- Start single blog -->
+                    <div class="col-md-6 col-lg-3 col-sm-6 mb-lm-30px pl-lg-60px">
+                        <div class="single-wedge">
+                            <h4 class="footer-herading" style="color: white;">Services</h4>
+                            <div class="footer-links">
+                                <div class="footer-row">
+                                    <ul class="align-items-center" >
+                                        <li class="li"><a class="single-link" href="my-account.html" style="color: white;">My Account</a></li>
+                                        <li class="li"><a class="single-link" href="contact.html" style="color: white;">Contact</a></li>
+                                        <li class="li"><a class="single-link" href="cart.html" style="color: white;">Shopping cart</a></li>
+                                        <li class="li"><a class="single-link" href="shop-left-sidebar.html" style="color: white;">Shop</a></li>
+                                        <li class="li"><a class="single-link" href="login.html" style="color: white;">Services Login</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End single blog -->
+                    <!-- Start single blog -->
+                    <div class="col-md-6 col-lg-3 col-sm-6 mb-lm-30px pl-lg-40px">
+                        <div class="single-wedge">
+                            <h4 class="footer-herading" style="color: white;">My Account</h4>
+                            <div class="footer-links">
+                                <div class="footer-row">
+                                    <ul class="align-items-center">
+                                        <li class="li"><a class="single-link" href="my-account.html" style="color: white;">My Account</a></li>
+                                        <li class="li"><a class="single-link" href="contact.html" style="color: white;">Contact</a></li>
+                                        <li class="li"><a class="single-link" href="cart.html" style="color: white;">Shopping cart</a></li>
+                                        <li class="li"><a class="single-link" href="shop-left-sidebar.html" style="color: white;">Shop</a></li>
+                                        <li class="li"><a class="single-link" href="login.html" style="color: white;">Services Login</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End single blog -->
+                    <!-- Start single blog -->
+                    <div class="col-md-6 col-lg-3 col-sm-12">
+                        <div class="single-wedge">
+                            <h4 class="footer-herading" style="color: white;">Contact Info</h4>
+                            <div class="footer-links">
+                                <!-- News letter area -->
+                                <p class="address" style="color: white;">Address : Panampalli Nagar Eranakulam ,Kerala</p>
+                                <p class="phone" style="color: white;">Phone :<a href="tel:7356925153" style="color: white;"> +91 7365925153</a></p>
+                                <p class="mail" style="color: white;">Email :<a href="mailto:gadgethub@gmail.com" style="color: white;"> gadgethub@gmail;.com</a></p>
+                                <p class="mail"><a href="https://cmaswin41@gmail.com/" style="color: white;"> gadgethub@gmail.com</a></p>
+                                <!-- News letter area  End -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End single blog -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="line-shape-top line-height-1">
+                    <div class="row flex-md-row-reverse align-items-center">
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="payment-mth"><a href="#"><img class="img img-fluid" src="{% static 'assets/images/icons/payment.png' %}" alt="payment-image"></a></div>
+                        </div>
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="copy-text" > © 2024 <strong>GadgetHub</strong>  PVT LTD </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer Area End -->
+</div>
+<!-- Modal -->
+{% for i in product %}
+<div class="modal modal-2 fade" id="exampleModal-{{forloop.counter}}" tabindex="-1" role="dialog">
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-body">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> <i class="pe-7s-close"></i></button>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-lm-30px mb-md-30px mb-sm-30px">
+                    <!-- Swiper -->
+                    <div class="swiper-container gallery-top">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="img-responsive m-auto" src="{{i.image.url}}" alt="">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="swiper-container gallery-thumbs mt-20px slider-nav-style-1 small-nav">
+                        <div class="swiper-wrapper">
+                            
+                            
+                        </div>
+                        <!-- Add Arrows -->
+                       
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-details-content quickview-content">
+                        <h2>{{i.name}}</h2>
+                        <div class="pricing-meta">
+                            <ul class="d-flex">
+                                <li class="new-price">{{i.price}}</li>
+                            </ul>
+                        </div>
+                        <div class="pro-details-rating-wrap">
+                            <div class="rating-product">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <span class="read-review"><a class="reviews" href="#">( 2 Review )</a></span>
+                        </div>
+                        <p class="mt-30px">{{i.description}}r</p>
+                        <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
+                            <span>SKU:</span>
+                            <ul class="d-flex">
+                                <li>
+                                    <a href="#">Ch-256xl</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
+                            <span>Categories: </span>
+                            <ul class="d-flex">
+                                <li>
+                                    <a href="#">{{i.category}} </a>
+                                </li>
+                                <li>
+                                    <a href="#">ETC</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
+                            <span>Tags: </span>
+                            <ul class="d-flex">
+                                <li>
+                                    <a href="#">Smart Device, </a>
+                                </li>
+                                <li>
+                                    <a href="#">Phone</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pro-details-quality">
+                            <div class="cart-plus-minus">
+                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />
+                            </div>
+                            <div class="pro-details-cart">
+                                <button class="add-cart"> Added to cart successfully!
+                                    Cart</button>
+                            </div>
+                            <div class="pro-details-compare-wishlist pro-details-wishlist ">
+                                <a href="wishlist.html"><i class="pe-7s-like"></i></a>
+                            </div>
+                        </div>
+                        <div class="payment-img">
+                            <a href="#"><img src="{% static 'assets/images/icons/payment.png' %}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{%  endfor %}
+<!-- Modal end -->
+<!-- Modal Cart -->
+{%for i in product%}
+<div class="modal customize-class fade" id="exampleModal-Cart-{{forloop.counter}}" tabindex="-1"   aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-body text-center">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="pe-7s-close"></i></button>
+            <div class="tt-modal-messages">
+                <i class="pe-7s-check"></i> Added to cart successfully!
+            </div>
+            <div class="tt-modal-product">
+                <div class="tt-img">
+                    <img src="{{i.image.url}}" alt="Modern Smart Phone">
+                </div>
+                <h2 class="tt-title"><a href="#">{{i.name}}</a></h2>
+                <br>
+                <a href="{% url 'cart_add' i.id %}">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>     
+{% endfor %}
+<!-- Modal wishlist -->
+<div class="modal customize-class fade" id="exampleModal-Wishlist" tabindex="-1"   aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-body text-center">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="pe-7s-close"></i></button>
+            <div class="tt-modal-messages">
+                <i class="pe-7s-check"></i> Added to Wishlist successfully!
+            </div>
+            <div class="tt-modal-product">
+                <div class="tt-img">
+                    <img src="{% static 'assets/images/product-image/1.webp' %}" alt="Modern Smart Phone">
+                </div>
+                <h2 class="tt-title"><a href="#">Modern Smart Phone</a></h2>
+            </div>
+        </div>
+    </div>
+</div>
+</div>    
+<!-- Modal compare -->
+<div class="modal customize-class fade" id="exampleModal-Compare" tabindex="-1"   aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-body text-center">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="pe-7s-close"></i></button>
+            <div class="tt-modal-messages">
+                <i class="pe-7s-check"></i> Added to compare successfully!
+            </div>
+            <div class="tt-modal-product">
+                <div class="tt-img">
+                    <img src="{% static 'assets/images/product-image/1.webp' %}" alt="Modern Smart Phone">
+                </div>
+                <h2 class="tt-title"><a href="#">Modern Smart Phone</a></h2>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+ <!-- Global Vendor, plugins JS -->
+    <!-- JS Files
+    ============================================ -->
+    <script src="{% static 'assets/js/vendor/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-migrate-3.3.2.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/modernizr-3.11.2.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/scrollUp.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/venobox.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/mailchimp-ajax.js' %}"></script>
+
+    <!-- Minify Version -->
+    <script src="{% static 'assets/js/vendor.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.min.js' %}"></script>
+
+    <!--Main JS (Common Activation Codes)-->
+    <!-- <script src="assets/js/main.js"></script> -->
+</body>
+
+
+<!-- Mirrored from template.hasthemes.com/hmart/hmart/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Sep 2021 18:04:06 GMT -->
+</html>

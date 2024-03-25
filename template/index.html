@@ -1,0 +1,609 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<style>
+.slider {
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+}
+
+.slide-track {
+    display: flex;
+    animation: scroll 10s linear infinite;
+}
+
+.slide {
+    width: 100px;
+    flex-shrink: 0;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+.line {
+    height: 2px;
+    width: 200px;
+    background: linear-gradient(90deg, #ff5733, #ffbd69, #ff5733);
+    margin: 10px auto;
+}
+
+
+
+</style>
+
+
+<!-- rgb(246,25,42) -->
+<!-- <div style="position: relative; width: 100%; height: 100vh; overflow: hidden; background-image: linear-gradient( rgba(12,3,51,0.3),rgba(12,3,51,0.3)); padding: 0 5%; display: flex; align-items: center;  justify-content: center;">
+    
+   <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 24px; text-align: center;">
+        <h1>Welcome to Our Website</h1>
+        <p>This is some additional content overlaid on the video.</p>
+    </div> -->
+<!-- </div> --> 
+<section>
+<div style="position: relative; text-align: center; color: #fff; margin-left: 8px; margin-right: 8px; margin-top: 2px;">
+    <video autoplay loop muted plays-inline style="width: 100%; height: 65%;">
+        <source src="{% static 'assets/images/banner/video/banner.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div style="position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding-top: 310px;" class="content">
+        <h1 style="padding-bottom: 20px; font-size: 80px; color: #fff; font-weight: 600; transition: 0.6s;" onmouseover="this.style.webkitTextStroke = '1px #fff'; this.style.color = 'transparent'; " onmouseout="this.style.webkitTextStroke = 'none'; this.style.color = '#fff'; ">Embrace the Apple Ecosystem at Gadget Hub</h1>
+        <a href="{% url 'product' %}" style="text-decoration: none; display: inline-block; color: #fff; font-size: 1.5em; border: 2px solid #fff; padding: 14px 70px; border-radius: 50px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#fff';">Shop Now</a>
+
+    </div>
+    
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section ">
+    <div class="hero-slider swiper-container slider-nav-style-1 slider-dot-style-1">
+        <!-- Hero slider Active -->
+        <div class="swiper-wrapper">
+            <!-- Single slider item -->
+            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1" >
+                <div class="container h-100">
+                    <div class="row h-100 flex-row-reverse">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
+                            <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
+                                <h2 class="title-1">Conquer Virtual Worlds With Our <br>Gaming Rigs. </h2>
+                                <span class="price">
+                                    <span class="mini-title">Only</span>
+                                <span class="amount">$699.00</span>
+                                </span>
+                                <a href="{% url 'product' %}" class="btn btn-primary text-capitalize">Shop All Devices</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
+                            <div class="show-case">
+                                <div class="hero-slide-image slider-2">
+                                    <img src="{% static 'assets/images/hero/inner-img/4b90o8pj.png' %}" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single slider item -->
+            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1" >
+                <div class="container h-100" >
+                    <div class="row h-100 flex-row-reverse" style="height: 500px;">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
+                            <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
+                                <h2 class="title-1">Epic Adventures <br> Transform Your Gaming Journey</h2>
+                                <span class="price">
+                                    <span class="mini-title">Only</span>
+                                <span class="amount">$599.00</span>
+                                </span>
+                                <a href="{% url 'product' %}" class="btn btn-primary text-capitalize">Shop All Devices</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
+                            <div class="show-case">
+                                <div class="hero-slide-image slider-2">
+                                    <img src="{% static 'assets/images/hero/inner-img/muwubfrc.png' %}" alt="" style="height: 450px;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-buttons">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="container-fluid" style=" padding-top: 0px; position: relative; margin: 0;">
+    <section>
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width: 100%;">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'assets/images/banner/6w7b346v.png' %}" class="d-block w-100" alt="Slide 1" style="height: 550px; transition: transform 0.2s ease-in-out;">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'assets/images/banner/be8kyujr.png' %}" class="d-block w-100" alt="Slide 2" style="height: 550px; transition: transform 0.2s ease-in-out;">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'assets/images/banner/zzhpq1gb.png' %}" class="d-block w-100" alt="Slide 3" style="height: 550px; transition: transform 0.2s ease-in-out;">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
+
+<!-- Hero/Intro Slider End -->
+<!-- Banner Area Start -->
+<div class="banner-area style-two pt-100px pb-100px">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="single-banner nth-child-2 mb-lm-30px">
+                    <img src="{% static 'assets/images/banner/4tcbdd7t.png'%}" alt=""  >
+                    <div class="banner-content nth-child-3">
+                        <h3 class="title" style="padding-top: 180px;"> LAPTOPS</h3>
+                        <span class="category">From $95.00</span>
+                        <a href="{% url 'product' %}" class="shop-link">Shop Now <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                          </svg></a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="single-banner nth-child-2">
+                    <img src="{% static 'assets/images/banner/n392bq1n.png' %}" alt="" style="height: 397px;">
+                    <div class="banner-content nth-child-2">
+                        <h3 class="title" style="padding-top: 180px;">SMART PHONES</h3>
+                        <span class="category">From $65.00</span>
+                        <a href="{% url 'product' %}" class="shop-link">Shop Now <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                          </svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Product Area Start -->
+<div class="product-area pb-100px">
+    <div class="container">
+        <!-- Section Title & Tab Start -->
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2 class="title">New Products</h2>
+                    <p>Shop Beyond Boundaries: Your Ultimate Gadget's Destination!</p>
+                </div>
+            </div>
+        </div>
+        <!-- Section Title & Tab End -->
+
+        <h1 style="font-family: sans-serif; font-weight: bold; text-align: center; color: #333; font-size: 24px; margin-top: 20px;">Our Popular Brands</h1>
+        <div class="line"></div>
+
+        
+        <div class="slider" style="padding-top: 40px; padding-bottom: 30px;">
+            <div class="slide-track">
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/apple (1).png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/mi.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/vivo.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/samsung.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/acer.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/boat.png' %}" alt="" height="50px" width="50px">
+                </div>
+               
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/dell.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/marshall.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/noise.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/pixel.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/realme (1).png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/apple (1).png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/mi.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/vivo.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/samsung.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/acer.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/boat.png' %}" alt="" height="50px" width="50px">
+                </div>
+                
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/dell.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/marshall.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/noise.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/pixel.png' %}" alt="" height="50px" width="50px">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/realme (1).png' %}" alt="" height="50px" width="50px">
+                </div>
+                
+            </div>
+        </div>
+
+
+<br><br>
+
+
+        
+
+        <div class="row">
+            <div class="col">
+                <div class="row mb-n-30px">
+                    {% for prod in product   %}
+                    <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px">
+                        <!-- Single Prodect -->
+                        <div class="product">
+                            <span class="badges">
+                                <span class="new">{{ prod.Condition }}</span>
+                            </span>
+                            <div class="thumb" style="height: 250px;">
+                                <a href="{{prod.id}}" class="image">
+                                    <img src="{{ prod.image.url }}" alt="Product" style="height: 250px;"/>
+                                    <img class="hover-image" src="{{ prod.image.url }}" alt="Product" style="height: 270px;"/>
+                                </a>
+                            </div>
+                            <div class="content">
+                                <span class="category"><a href="#">{{ prod.category }}</a></span>
+                                <h5 class="title"><a href="{{prod.id}}">{{ prod.name }}
+                                    </a>
+                                </h5>
+                                <span class="price">
+                                    <span class="new">${{prod.price}}</span>
+                                </span>
+                            </div>
+                            <div class="actions">
+                                <button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart-{{forloop.counter}}">
+                                    <i class="pe-7s-shopbag"></i>
+                                </button>
+                                    
+                                    <button class="action wishlist" title="Wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist-{{forloop.counter}}">
+                                    <i class="pe-7s-like"></i>
+                                </button>
+                                <button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal-{{forloop.counter}}">
+                                    <i class="pe-7s-look"></i>
+                                </button>
+                                <button class="action compare" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal-Compare">
+                                    <i class="pe-7s-refresh-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product Area End -->
+<!-- Banner Area Start -->
+<div class="banner-area style-three pb-100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="single-banner mb-lm-30px">
+                    <img src="{% static 'assets/images/banner/xk60xg9h.png' %}" alt=""style="height: 378px;" >
+                    <div class="banner-content nth-child-3">
+                        <h3 class="title" style="color: black;">Apple Airpods For<br>
+                                Your Ears</h3>
+                        <span class="category" style="color: white;">From $60.00</span>
+                        <a href="{% url 'product' %}" class="shop-link">Shop Now     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                          </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="single-banner">
+                    <img src="{% static 'assets/images/banner/7h0qdqfa.png' %}" alt="" style="height: 378px;">
+                    <div class="banner-content nth-child-2">
+                        <h3 class="title" style="color: white;">Sony Headphones For <br>
+                                Your Head</h3>
+                        <span class="category"style="color: black;">From $95.00</span>
+                        <a href="{% url 'product' %}" class="shop-link">Shop Now <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                          </svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+
+
+<div class="container-fluid">
+    <img src="{% static 'assets/images/banner/nerkbz48.png' %}" alt="" style="width: 100; height: 500px; padding-bottom: 20ox; padding-top: 20px;">
+</div>
+<br><br><br>
+
+
+<!-- Feature product area start -->
+<div class="feature-product-area pb-100px">
+    <div class="container" >
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2 class="title">Featured Offers</h2>
+                    <p>Unbeatable Deals Await: Grab Them Before They're Gone!</p>
+                </div>
+            </div>
+        </div>
+        <div class="feature-product-slider swiper-container slider-nav-style-1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide feature-right-content">
+                    <div class="image-side">
+                        <img src="{% static 'assets/images/znafunrk.png' %}" alt="">
+                        <button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart"><i
+                            class="pe-7s-shopbag"></i></button>
+                    </div>
+                    <div class="content-side" style="height: 350px;">
+                        <div class="deal-timing">
+                            <span>End In:</span>
+                            <div data-countdown="2021/09/15"></div>
+                        </div>
+                        <div class="prize-content">
+                            <h5 class="title"><a href="single-product.html">Hikvision 2MP Outdoor Network PTZ Dome Camera</a></h5>
+                            <span class="price">
+                        <span class="old">$48.50</span>
+                            <span class="new">$38.50</span>
+                            </span>
+                        </div>
+                        <div class="product-feature">
+                            <ul>
+                                <li>Predecessor : <span>None.</span></li>
+                                <li>Support Type : <span>Neutral.</span></li>
+                                <li>Cushioning : <span>High Energizing.</span></li>
+                                <li>Total Weight : <span> 300gm</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide feature-right-content">
+                    <div class="image-side">
+                        <img src="{% static 'assets/images/cw2b9c69.png' %}" alt="">
+                        <button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart"><i
+                            class="pe-7s-shopbag"></i></button>
+                    </div>
+                    <div class="content-side" style="height: 350px;">
+                        <div class="deal-timing">
+                            <span>End In:</span>
+                            <div data-countdown="2021/09/15"></div>
+                        </div>
+                        <div class="prize-content">
+                            <h5 class="title"><a href="single-product.html">DJI Mini 4 Pro Drone (with DJI RC-N2 Remote)</a></h5>
+                            <span class="price">
+                        <span class="old">$48.50</span>
+                            <span class="new">$38.50</span>
+                            </span>
+                        </div>
+                        <div class="product-feature">
+                            <ul>
+                                <li>Predecessor : <span>None.</span></li>
+                                <li>Support Type : <span>Neutral.</span></li>
+                                <li>Cushioning : <span>High Energizing.</span></li>
+                                <li>Total Weight : <span> 249 gm</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide feature-right-content">
+                    <div class="image-side">
+                        <img src="{% static 'assets/images/wcbd81h2.png' %}" alt="">
+                        <button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart"><i
+                            class="pe-7s-shopbag"></i></button>
+                    </div>
+                    <div class="content-side" style="height: 350px;">
+                        <div class="deal-timing">
+                            <span>End In:</span>
+                            <div data-countdown="2021/09/15"></div>
+                        </div>
+                        <div class="prize-content">
+                            <h5 class="title"><a href="product.html">Philips Home Theater 5.1</a></h5>
+                            <span class="price">
+                        <span class="old">$48.50</span>
+                            <span class="new">$38.50</span>
+                            </span>
+                        </div>
+                        <div class="product-feature">
+                            <ul>
+                                <li>Predecessor : <span>None.</span></li>
+                                <li>Support Type : <span>Neutral.</span></li>
+                                <li>Cushioning : <span>High Energizing.</span></li>
+                                <li>Total Weight : <span> 300gm</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide feature-right-content">
+                    <div class="image-side">
+                        <img src="{% static 'assets/images/4e7ir3nq.png' %}" alt="">
+                        <button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart"><i
+                            class="pe-7s-shopbag"></i></button>
+                    </div>
+                    <div class="content-side" style="height: 350px;">
+                        <div class="deal-timing">
+                            <span>End In:</span>
+                            <div data-countdown="2021/09/15"></div>
+                        </div>
+                        <div class="prize-content">
+                            <h5 class="title"><a href="product.html">Vivo X90 Pro+</a></h5>
+                            <span class="price">
+                        <span class="old">$48.50</span>
+                            <span class="new">$38.50</span>
+                            </span>
+                        </div>
+                        <div class="product-feature">
+                            <ul>
+                                <li>Predecessor : <span>None.</span></li>
+                                <li>Support Type : <span>Neutral.</span></li>
+                                <li>Cushioning : <span>High Energizing.</span></li>
+                                <li>Total Weight : <span> 300gm</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-buttons">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature product area End -->
+<!-- Fashion Area Start -->
+
+<div class="fashion-area" data-bg-image="{% static 'assets/images/banner/p4sfpd2h.png' %}">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 text-center">
+                <h2 class="title"> <span>Smart Fashion</span> With Smart Devices </h2>
+                <a href="{% url 'product' %}" class="btn btn-primary text-capitalize m-auto">Shop All Devices</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fashion Area End -->
+<!-- Feature Area Srart -->
+<div class="feature-area pt-100px pb-100px">
+    <div class="container">
+        <div class="feature-wrapper">
+            <div class="single-feture-col mb-md-30px mb-lm-30px">
+                <!-- single item -->
+                <div class="single-feature">
+                    <div class="feature-icon" style="background-color: rgb(246,25,42) ;">
+                        <img src="{% static 'assets/images/icons/1.png' %}" alt="">
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="title">Free Shipping</h4>
+                        <span class="sub-title">Capped at $39 per order</span>
+                    </div>
+                </div>
+            </div>
+            <!-- single item -->
+            <div class="single-feture-col mb-md-30px mb-lm-30px" >
+                <div class="single-feature">
+                    <div class="feature-icon" style="background-color: rgb(246,25,42) ;">
+                        <img src="{% static 'assets/images/icons/2.png' %}" alt="" >
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="title">Card Payments</h4>
+                        <span class="sub-title">12 Months Installments</span>
+                    </div>
+                </div>
+            </div>
+            <!-- single item -->
+            <div class="single-feture-col">
+                <div class="single-feature">
+                    <div class="feature-icon" style="background-color: rgb(246,25,42) ;">
+                        <img src="{% static 'assets/images/icons/3.png' %}" alt="">
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="title">Easy Returns</h4>
+                        <span class="sub-title">Shop With Confidence</span>
+                    </div>
+                </div>
+                <!-- single item -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature Area End -->
+
+
+{% endblock %}

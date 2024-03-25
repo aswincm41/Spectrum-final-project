@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<section class="about" style="background: rgb(224, 251, 222); background:#fff; padding: 100px 0 20px 0; text-align: center; padding-top: 20px;">
+  <h1 style="font-size: 2.5rem; margin-bottom: 20px;">About Us</h1>
+  <p style="font-size: 1rem; color: #323030; max-width: 800px; margin: 0 auto;">Gadget Hub is your one-stop destination for all your tech needs. We are dedicated to providing our customers with the latest gadgets, electronics, and accessories, curated from top brands worldwide. Our mission is to offer a seamless shopping experience, coupled with exceptional customer service and competitive pricing. Whether you're a tech enthusiast, a professional, or someone looking to explore the world of technology, Gadget Hub has something for everyone. Join us on our journey as we continue to innovate and bring you the best in tech.</p>
+  <div class="about-info" style="margin: 2rem 2rem; display: flex; align-items: center; justify-content: center; text-align: left;">
+      <div class="about-img" style="width: 20rem; height: 20rem;">
+          <img src="{% static 'assets/images/logo/icon.png' %}" alt="Geeksforgeeks" style="width: 200px; height: 200px; border-radius: 5px; object-fit: contain;">
+      </div>
+      <div>
+          <p style="font-size: 1.3rem; margin: 0 2rem; text-align: justify;">At Gadget Hub, we're passionate about technology and innovation. Our team is committed to sourcing the latest and most cutting-edge gadgets and electronics from around the globe. From smartphones to smart home devices, from gaming gear to productivity tools, we strive to offer a diverse range of products to cater to every tech enthusiast's needs. With a focus on quality, affordability, and customer satisfaction, Gadget Hub aims to be your trusted partner in the ever-evolving world of technology.</p>
+          <button style="border: none; outline: 0; padding: 10px; margin: 2rem; font-size: 1rem; color: white; background-color: rgb(246,25,42); text-align: center; cursor: pointer; width: 15rem; border-radius: 4px;">Read More...</button>
+      </div>
+  </div>
+</section>
+
+{% endblock %}
