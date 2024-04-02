@@ -37,7 +37,38 @@
     margin: 10px auto;
 }
 
+@media (min-aspect-ratio: 16/9){
 
+.back-video{
+
+width: 100%;
+
+height: auto;
+
+}
+
+}
+
+@media (max-aspect-ratio: 16/9){
+
+.back-video{ 
+    width: auto;
+    height: 100%;
+}
+
+}
+
+
+.carousel-item img {
+    max-height: 550px; /* Set the maximum height for the carousel images */
+}
+
+
+
+
+
+       
+        
 
 </style>
 
@@ -51,19 +82,23 @@
     </div> -->
 <!-- </div> --> 
 <section>
-<div style="position: relative; text-align: center; color: #fff; margin-left: 8px; margin-right: 8px; margin-top: 2px;">
-    <video autoplay loop muted plays-inline style="width: 100%; height: 65%;">
-        <source src="{% static 'assets/images/banner/video/banner.mp4' %}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div style="position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding-top: 310px;" class="content">
-        <h1 style="padding-bottom: 20px; font-size: 80px; color: #fff; font-weight: 600; transition: 0.6s;" onmouseover="this.style.webkitTextStroke = '1px #fff'; this.style.color = 'transparent'; " onmouseout="this.style.webkitTextStroke = 'none'; this.style.color = '#fff'; ">Embrace the Apple Ecosystem at Gadget Hub</h1>
-        <a href="{% url 'product' %}" style="text-decoration: none; display: inline-block; color: #fff; font-size: 1.5em; border: 2px solid #fff; padding: 14px 70px; border-radius: 50px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#fff';">Shop Now</a>
+    <div style="position: relative; text-align: center; color: #fff; margin-left: 8px; margin-right: 8px; margin-top: 2px;">
+        <video autoplay loop muted plays-inline style="width: 100%; height: 65%;" class="back-video">
+            <source src="{% static 'assets/images/banner/video/banner.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div style="position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding-top: 10%;" class="content">
+            <h1 style="padding-bottom: 10px; font-size: 40px; color: #fff; font-weight: 600; transition: 0.6s;" onmouseover="this.style.webkitTextStroke = '1px #fff'; this.style.color = 'transparent'; " onmouseout="this.style.webkitTextStroke = 'none'; this.style.color = '#fff'; ">Embrace the Apple Ecosystem </h1>
+            <a href="{% url 'product' %}" style="text-decoration: none; display: inline-block; color: #fff; font-size: 1em; border: 2px solid #fff; padding: 10px 20px; border-radius: 50px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#fff';">Shop Now</a>
 
+        </div>
+        
+       
+        
     </div>
-    
-</div>
 </section>
+
+
 
 
 
@@ -108,15 +143,15 @@
                 </div>
             </div>
             <!-- Single slider item -->
-            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1" >
-                <div class="container h-100" >
+            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1">
+                <div class="container h-100">
                     <div class="row h-100 flex-row-reverse" style="height: 500px;">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
                             <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
                                 <h2 class="title-1">Epic Adventures <br> Transform Your Gaming Journey</h2>
                                 <span class="price">
                                     <span class="mini-title">Only</span>
-                                <span class="amount">$599.00</span>
+                                    <span class="amount">$599.00</span>
                                 </span>
                                 <a href="{% url 'product' %}" class="btn btn-primary text-capitalize">Shop All Devices</a>
                             </div>
@@ -124,13 +159,14 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
                             <div class="show-case">
                                 <div class="hero-slide-image slider-2">
-                                    <img src="{% static 'assets/images/hero/inner-img/muwubfrc.png' %}" alt="" style="height: 450px;" />
+                                    <img src="{% static 'assets/images/hero/inner-img/muwubfrc.png' %}" alt="" style="max-height: 450px; width: auto;" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination swiper-pagination-white"></div>
@@ -148,36 +184,42 @@
 
 
 
-<div class="container-fluid" style=" padding-top: 0px; position: relative; margin: 0;">
-    <section>
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width: 100%;">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{% static 'assets/images/banner/6w7b346v.png' %}" class="d-block w-100" alt="Slide 1" style="height: 550px; transition: transform 0.2s ease-in-out;">
+<div class="container-fluid" style="padding-top: 0px; position: relative; margin: 0;">
+    <div class="row">
+        <div class="col">
+            <section>
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width: 100%;">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{% static 'assets/images/banner/6w7b346v.png' %}" class="d-block w-100" alt="Slide 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'assets/images/banner/be8kyujr.png' %}" class="d-block w-100" alt="Slide 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'assets/images/banner/zzhpq1gb.png' %}" class="d-block w-100" alt="Slide 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <div class="carousel-item">
-                    <img src="{% static 'assets/images/banner/be8kyujr.png' %}" class="d-block w-100" alt="Slide 2" style="height: 550px; transition: transform 0.2s ease-in-out;">
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'assets/images/banner/zzhpq1gb.png' %}" class="d-block w-100" alt="Slide 3" style="height: 550px; transition: transform 0.2s ease-in-out;">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            </section>
         </div>
-    </section>
+    </div>
 </div>
+
+
 
 
 
@@ -238,75 +280,71 @@
         <div class="line"></div>
 
         
-        <div class="slider" style="padding-top: 40px; padding-bottom: 30px;">
-            <div class="slide-track">
-                <div class="slide">
-                    <img src="{% static 'assets/images/logo/apple (1).png' %}" alt="" height="50px" width="50px">
+        <div class="slider" >
+            <div class="slide-track" > 
+                <div class="slide" >
+                    <img src="{% static 'assets/images/logo/apple (1).png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                 <div class="slide">
-                    <img src="{% static 'assets/images/logo/mi.png' %}" alt="" height="50px" width="50px">
+                    <img src="{% static 'assets/images/logo/mi.png' %}" alt=""style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                 <div class="slide">
-                    <img src="{% static 'assets/images/logo/vivo.png' %}" alt="" height="50px" width="50px">
+                    <img src="{% static 'assets/images/logo/vivo.png' %}" alt=""style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                 <div class="slide">
-                    <img src="{% static 'assets/images/logo/samsung.png' %}" alt="" height="50px" width="50px">
+                    <img src="{% static 'assets/images/logo/samsung.png' %}" alt=""style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                 <div class="slide">
-                    <img src="{% static 'assets/images/logo/acer.png' %}" alt="" height="50px" width="50px">
+                    <img src="{% static 'assets/images/logo/acer.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                 <div class="slide">
-                    <img src="{% static 'assets/images/logo/boat.png' %}" alt="" height="50px" width="50px">
+                    <img src="{% static 'assets/images/logo/boat.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                
                 <div class="slide">
-                    <img src="{% static 'assets/images/logo/dell.png' %}" alt="" height="50px" width="50px">
+                    <img src="{% static 'assets/images/logo/dell.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                 <div class="slide">
-                    <img src="{% static 'assets/images/logo/marshall.png' %}" alt="" height="50px" width="50px">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'assets/images/logo/noise.png' %}" alt="" height="50px" width="50px">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'assets/images/logo/pixel.png' %}" alt="" height="50px" width="50px">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'assets/images/logo/realme (1).png' %}" alt="" height="50px" width="50px">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'assets/images/logo/apple (1).png' %}" alt="" height="50px" width="50px">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'assets/images/logo/mi.png' %}" alt="" height="50px" width="50px">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'assets/images/logo/vivo.png' %}" alt="" height="50px" width="50px">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'assets/images/logo/samsung.png' %}" alt="" height="50px" width="50px">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'assets/images/logo/acer.png' %}" alt="" height="50px" width="50px">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'assets/images/logo/boat.png' %}" alt="" height="50px" width="50px">
+                    <img src="{% static 'assets/images/logo/marshall.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                 
                 <div class="slide">
-                    <img src="{% static 'assets/images/logo/dell.png' %}" alt="" height="50px" width="50px">
+                    <img src="{% static 'assets/images/logo/pixel.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                 <div class="slide">
-                    <img src="{% static 'assets/images/logo/marshall.png' %}" alt="" height="50px" width="50px">
+                    <img src="{% static 'assets/images/logo/realme (1).png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                 <div class="slide">
-                    <img src="{% static 'assets/images/logo/noise.png' %}" alt="" height="50px" width="50px">
+                    <img src="{% static 'assets/images/logo/apple (1).png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                 <div class="slide">
-                    <img src="{% static 'assets/images/logo/pixel.png' %}" alt="" height="50px" width="50px">
+                    <img src="{% static 'assets/images/logo/mi.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                 <div class="slide">
-                    <img src="{% static 'assets/images/logo/realme (1).png' %}" alt="" height="50px" width="50px">
+                    <img src="{% static 'assets/images/logo/vivo.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/samsung.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/acer.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/boat.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
+                </div>
+                
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/dell.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/marshall.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
+                </div>
+                
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/pixel.png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'assets/images/logo/realme (1).png' %}" alt="" style="width: 100%;  aspect-ratio: 3/2; object-fit: contain;mix-blend-mode: color-burn;">
                 </div>
                 
             </div>
@@ -406,8 +444,9 @@
 
 
 <div class="container-fluid">
-    <img src="{% static 'assets/images/banner/nerkbz48.png' %}" alt="" style="width: 100; height: 500px; padding-bottom: 20ox; padding-top: 20px;">
+    <img src="{% static 'assets/images/banner/nerkbz48.png' %}" alt="" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 </div>
+
 <br><br><br>
 
 

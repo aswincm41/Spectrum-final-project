@@ -9,15 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gadgethub (2024) | E-commerce platform</title>
+    <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="static/assets/images/logo/icon.png" style="height: 15px;">
-    <!-- Optionally, you can specify a larger logo for higher resolution screens -->
-    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/logo/icon.png' %}">
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Hmart-Smart Product eCommerce html Template">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="static/assets/images/logo/icon.png" />
-    <!-- CSS
-    ============================================ -->
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css'%}" />
     <link rel="stylesheet" href="{% static 'assets/css/font.awesome.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/pe-icon-7-stroke.css'%}" />
@@ -26,11 +24,11 @@
     <link rel="stylesheet" href="{% static 'assets/css/venobox.css'%}">
     <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.min.css'%}"> 
     <!-- Style CSS -->
-    <!-- <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Minify Version -->
     <link rel="stylesheet" href="{% static 'assets/css/plugins.min.css'%}">
     <link rel="stylesheet" href="{% static 'assets/css/style.min.css'%}">
 </head>
+
+
 
 <body>
     <div class="main-wrapper">
@@ -115,24 +113,25 @@
                 </div>
             </div>
             <!-- Header action area end -->
-            <!-- Header action area start -->
-            <div class="header-bottom d-lg-none sticky-nav style-1" >
+             <!-- Header action area start -->
+             <div class="header-bottom d-lg-none sticky-nav style-1" style=" background-color: black;">
                 <div class="container" >
                     <div class="row justify-content-between align-items-center">
-                        <div class="col-lg-3 col">
+                        <div class="col-lg-3 col" >
                             <div class="header-logo">
-                                <a href="{% url 'index' %}"><img src="{% static 'assets/images/logo/LOGOO.png' %}" alt="Site Logo" /></a>
+                                <a href="{% url 'index' %}"><img src="{% static 'assets/images/logo/LOGOO.png' %}" alt="Site Logo" style="height: 60px;"/></a>
                             </div>
                         </div>
-                        <div class="col-lg-6 d-none d-lg-block">
+                        <div class="col-lg-6 d-none d-lg-block" style="background-color: black;">
                             <div class="search-element">
                                 <form action="#">
                                     <input type="text" placeholder="Search" />
-                                    <button><i class="pe-7s-search"></i></button>
+                                    <button style="background-color: red;"><i class="pe-7s-search"></i></button>
                                 </form>
                             </div>
                         </div>
-                        <div class="col-lg-3 col">
+                        
+                        <div class="col-lg-3 col" style=" background-color: black;">
                             <div class="header-actions">
                                 <!-- Single Wedge Start -->
                                 <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
@@ -141,7 +140,7 @@
                                 <!-- Single Wedge End -->
                                 <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                                     <i class="pe-7s-shopbag"></i>
-                                    <span class="header-action-num">01</span>
+                                    <span class="header-action-num">{{request.session.cart | length}}</span>
                                     <!-- <span class="cart-amount">€30.00</span> -->
                                 </a>
                                 <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
